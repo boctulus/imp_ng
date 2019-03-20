@@ -26,9 +26,37 @@ const routes: Routes = [
         }
     ]
   },
-  { path: 'somos', component: SomosComponent, outlet: 'child2' },
+  {    
+    path: 'somos', 
+    component: AppComponent,
+    children: [
+        {
+            path: '',
+            component: NavbarComponent,
+            outlet: 'child1'
+        },
+        {
+            path: '',
+            component: SomosComponent,
+            outlet: 'child2'
+        }
+    ]
+  },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent, outlet: 'child2' }
+  { path: '**', component: AppComponent, 
+    children: [
+      {
+          path: '',
+          component: NavbarComponent,
+          outlet: 'child1'
+      },
+      {
+          path: '',
+          component: PageNotFoundComponent,
+          outlet: 'child2'
+      }
+    ]
+  }
 ];
 
 @NgModule({
