@@ -7,53 +7,30 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './static/navbar/navbar.component';
 import { HomeComponent } from './static/home/home.component';
 import { SomosComponent } from './static/somos/somos.component';
+import { LayoutComponent } from './static/layout/layout.component';
 
 
 const routes: Routes = [
-  {    
-    path: 'home', 
-    component: AppComponent,
-    children: [
-        {
-            path: '',
-            component: NavbarComponent,
-            outlet: 'child1'
-        },
-        {
-            path: '',
-            component: HomeComponent,
-            outlet: 'child2'
-        }
-    ]
-  },
-  {    
-    path: 'somos', 
-    component: AppComponent,
-    children: [
-        {
-            path: '',
-            component: NavbarComponent,
-            outlet: 'child1'
-        },
-        {
-            path: '',
-            component: SomosComponent,
-            outlet: 'child2'
-        }
-    ]
-  },
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: AppComponent, 
+  {
+    path: '',
+    component: LayoutComponent,
     children: [
       {
-          path: '',
-          component: NavbarComponent,
-          outlet: 'child1'
+        path: 'home',
+        component: HomeComponent,
       },
       {
-          path: '',
-          component: PageNotFoundComponent,
-          outlet: 'child2'
+        path: 'somos',
+        component: SomosComponent,
+      }
+    ]
+  },
+  {
+    path: '**', component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        component: PageNotFoundComponent,
       }
     ]
   }

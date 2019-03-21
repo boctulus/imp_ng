@@ -8,6 +8,7 @@ import { NavbarComponent } from './static/navbar/navbar.component';
 import { HomeComponent } from './static/home/home.component';
 import { SomosComponent } from './static/somos/somos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LayoutComponent } from './static/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavbarComponent,
     HomeComponent,
     SomosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
-  ],  
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

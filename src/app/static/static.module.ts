@@ -9,22 +9,23 @@ import { ConsultasComponent } from './consultas/consultas.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent, 
-    HomeComponent, 
-    SomosComponent, 
-    ServiciosComponent, 
-    TutorialesComponent, 
-    ConsultasComponent, 
-    AyudaComponent, 
-    RegistroComponent, 
-    LoginComponent, 
+    NavbarComponent,
+    HomeComponent,
+    SomosComponent,
+    ServiciosComponent,
+    TutorialesComponent,
+    ConsultasComponent,
+    AyudaComponent,
+    RegistroComponent,
+    LoginComponent,
+    LayoutComponent,
   ],
-  imports: [ 
-    CommonModule 
+  imports: [
+    CommonModule
   ]
 })
 export class StaticModule { }
- 
