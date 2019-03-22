@@ -10,6 +10,11 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LegalesComponent } from './legales/legales.component';
+import { BajaComponent } from './baja/baja.component';
+import { PubliciteComponent } from './publicite/publicite.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { LayoutComponent } from './layout/layout.component';
     RegistroComponent,
     LoginComponent,
     LayoutComponent,
+    LegalesComponent,
+    BajaComponent,
+    PubliciteComponent,
+    DenunciasComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule
