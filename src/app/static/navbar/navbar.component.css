@@ -1,0 +1,35 @@
+
+nav {
+   background: none;
+   display: flex;
+   padding: 0;
+   justify-content: center;
+   width: 100%;
+   height: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+nav ul {
+  list-style: none;
+  background: #ddd;
+  flex-wrap:wrap;
+}
+nav li a {
+  color: #002766;
+  display: block;
+  text-decoration: none;
+  padding: .5em 1em;
+  text-align:center;
+}
+nav li a:hover {
+  background: #fff;
+  color: #ddd;
+}
+ 
+  @media screen and (min-width: 480px) {
+    nav ul {
+      display: flex;
+       justify-content: center;
+    }
+}
