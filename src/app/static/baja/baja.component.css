@@ -1,1 +1,6 @@
+@import url('../../../assets/css/registro-usuarios.css');
 @import url('../../../assets/css/style.css'); 
+
+html{
+    overflow-y: scroll
+}
