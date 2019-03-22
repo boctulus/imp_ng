@@ -1,44 +1,151 @@
-<div id="main">
-		<div class="container">
-				<div class="row">
-						<div class="col-lg-12">
-						
-								<div class="account-wall">
-										<section class="align-lg-center">
-										<div class="site-logo"></div>
-										<h1 class="login-title"><span>Bienvenido</span> <small> Ingresa tu mail y contraseña</small></h1>
-										</section>
-										<form id="form-signin" class="form-signin">
-												<section>
-														<div class="input-group">
-																<div class="input-group-addon"><i class="fa fa-user"></i></div>
-																<input  type="text" class="form-control" name="username" id="username" placeholder="Mail">
-														</div>
-														<div class="input-group">
-																<div class="input-group-addon"><i class="fa fa-key"></i></div>
-																<input type="password" class="form-control"  name="password" maxleght="20" placeholder="Contraseña" id="password">
-														</div>
-														<button class="btn btn-lg btn-theme-inverse btn-block" type="submit" id="sign-in" onclick="validate()">Ingresar</button>
-												</section>
-												<section class="clearfix">
-														<div class="iCheck pull-left"  data-color="red">
-														<input type="checkbox" checked>
-														<label>Recordarme</label>
-														</div>
-														<a href="recuperar.php" class="pull-right help">Olvidaste tu contraseña? </a>
-												</section>		
-												<span class="or" data-text="O"></span>
-												<a routerLink= "/registro"><button class="btn btn-lg  btn-inverse btn-block" type="button"> Registrate</button></a>
-										</form>
-										<a href="#" class="footer-link">&copy; 2014 imprimoya &trade; </a>
-								</div>	
-								<!-- //account-wall-->
-								
-						</div>
-						<!-- //col-sm-6 col-md-4 col-md-offset-4-->
-				</div>
-				<!-- //row-->
-		</div>
-		<!-- //container-->
-		
-</div>
+<!-- body debe tenía class="full-lg" style="" data-notific8s="1" -->
+  <div id="wrapper">
+    
+    <div id="loading-top">
+        <div id="canvas_loading"><canvas height="64" width="64" style="width: 32px; height: 32px; display: block;"></canvas></div>
+        <span>Chequeando...</span>
+    </div>
+    
+    <div id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                
+                    <div class="account-wall" style="margin-top: 214px;">
+                        <section class="align-lg-center">
+                        <div class="site-logo"></div>
+                        <h1 class="login-title"><span>Bienvenido</span> <small> Ingresa tu mail y contraseña</small></h1>
+                        </section>
+                        <form id="form-signin" class="form-signin">
+                            <section>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Mail">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                    <input type="password" class="form-control" name="password" maxleght="20" placeholder="Contraseña" id="password">
+                                </div>
+                                <button class="btn btn-lg btn-theme-inverse btn-block" type="submit" id="sign-in" onclick="validate()">Ingresar</button>
+                            </section>
+                            <section class="clearfix">
+                                <div class="iCheck pull-left" data-color="red">
+                                <div class="icheckbox_flat-red checked"><input type="checkbox" checked="" id="iCheck-cp0-0" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                <label for="iCheck-cp0-0">Recordarme</label>
+                                </div>
+                                <a href="recuperar.php" class="pull-right help">Olvidaste tu contraseña? </a>
+                            </section>		
+                            <span class="or" data-text="O"></span>
+                            <a routerLink= "/registro"><button class="btn btn-lg  btn-inverse btn-block" type="button"> Registrate</button></a>
+                        </form>
+                        <a href="#" class="footer-link">© 2014 imprimoya ™ </a>
+                    </div>	
+                    <!-- //account-wall-->
+                    
+                </div>
+                <!-- //col-sm-6 col-md-4 col-md-offset-4-->
+            </div>
+            <!-- //row-->
+        </div>
+        <!-- //container-->
+        
+    </div>
+    <!-- //main-->
+    
+        
+    </div>
+    <!-- //wrapper-->
+    
+    
+    <!--
+    ////////////////////////////////////////////////////////////////////////
+    //////////     JAVASCRIPT  LIBRARY     //////////
+    /////////////////////////////////////////////////////////////////////
+    -->
+        
+    <!-- Jquery Library -->
+    <script type="text/javascript" src="../../../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../assets/js/jquery.ui.min.js"></script>
+    <script type="text/javascript" src="../../../assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- Modernizr Library For HTML5 And CSS3 -->
+    <script type="text/javascript" src="../../../assets/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="../../../assets/plugins/mmenu/jquery.mmenu.js"></script>
+    <!-- Library 10+ Form plugins-->
+    <script type="text/javascript" src="../../../assets/plugins/form/form.js"></script>
+    <!-- Datetime plugins -->
+    <script type="text/javascript" src="../../../assets/plugins/datetime/datetime.js"></script>
+    <!-- Library Chart-->
+    <script type="text/javascript" src="../../../assets/plugins/chart/chart.js"></script>
+    <!-- Library  5+ plugins for bootstrap -->
+    <script type="text/javascript" src="../../../assets/plugins/pluginsForBS/pluginsForBS.js"></script>
+    <!-- Library 10+ miscellaneous plugins -->
+    <script type="text/javascript" src="../../../assets/plugins/miscellaneous/miscellaneous.js"></script>
+    <!-- Library Themes Customize-->
+    <script type="text/javascript" src="../../../assets/js/caplet.custom.js"></script>
+    <script type="text/javascript">
+
+     /*
+    $(function() {
+           //Login animation to center 
+          function toCenter(){
+              var mainH=$("#main").outerHeight();
+              var accountH=$(".account-wall").outerHeight();
+              var marginT=(mainH-accountH)/2;
+                   if(marginT>30){
+                     $(".account-wall").css("margin-top",marginT-15);
+                  }else{
+                    $(".account-wall").css("margin-top",30);
+                  }
+            }
+            toCenter();
+            var toResize;
+            $(window).resize(function(e) {
+              clearTimeout(toResize);
+              toResize = setTimeout(toCenter(), 500);
+            });
+            
+          //Canvas Loading
+            var throbber = new Throbber({  size: 32, padding: 17,  strokewidth: 2.8,  lines: 12, rotationspeed: 0, fps: 15 });
+            throbber.appendTo(document.getElementById('canvas_loading'));
+            throbber.start();
+            
+          //Set note alert
+          setTimeout(function () { 
+            $.notific8('Hola, si aun no estas registrado haz click'+'<a href="../registro.html" target="_parent" style="color:#FFF;font-weight:bold"> aqui</a>'+ ' para comenzar a usar IMPRIMOYA!',{ sticky:true, horizontalEdge:"top", theme:"inverse" ,heading:"AUN NO TENES CUENTA?"}) 
+            }, 1000);
+      
+          
+          
+          $("#form-signin").submit(function(event){
+              event.preventDefault();
+              var main=$("#main");
+              //scroll to top
+              main.animate({
+                scrollTop: 0
+              }, 500);
+              main.addClass("slideDown");		
+              
+              // send username and password to php check login
+              $.ajax({
+                url: "data/checklogin.php", data: $(this).serialize(), type: "POST", dataType: 'json',
+                success: function (e) {
+                    setTimeout(function () { main.removeClass("slideDown") }, !e.status ? 500:3000);
+                     if (e.status == 0) { 
+                       $.notific8('Verifica tu usuario y contraseña!! ',{ life:5000,horizontalEdge:"bottom", theme:"danger" ,heading:" ERROR :( "});
+                      return false;
+                    }	
+                    if (e.status == 2){
+                      $.notific8('Parece que aun no haz activado tu usuario. Chequea en tu casilla de mail un correo de IMPRIMOYA para activar!',{ life:5000,horizontalEdge:"bottom", theme:"danger" ,heading:"ATENCION!"});
+                      return false;
+                     }
+                     setTimeout(function () { $("#loading-top span").text("Todo bien, datos correctos...") }, 500);
+                     setTimeout(function () { $("#loading-top span").text("Redirigiendo al panel...")  }, 1500);
+                     setTimeout( "window.location.href='redirect.php'", 3100 );
+                }
+              });	
+          
+          });
+      });
+      */
+    </script>
+    
