@@ -52,10 +52,6 @@ const routes: Routes = [
         component: RegistroComponent,
       },
       {
-        path: 'login',
-        component: LoginComponent,
-      },
-      {
         path: 'publicite',
         component: PubliciteComponent,
       },
@@ -73,6 +69,12 @@ const routes: Routes = [
       }
     ]
   },
+  
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+
   {
     path: '**', component: LayoutComponent,
     children: [
