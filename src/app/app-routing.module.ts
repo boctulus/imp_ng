@@ -19,6 +19,7 @@ import { BajaComponent } from './static/baja/baja.component';
 
 
 const routes: Routes = [
+{ path: '',   redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
     component: LayoutComponent,
