@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
-/*
-  Hay un mini-bug ... y es que el primer bullet no reacciona al evento onClick
-  como los demás (razón desconicida)
-*/
-
 @Component({
   selector: 'slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  interval = 4000;
+  interval = 2500;
   timer : any;
   currentSlider = 0
   cantSliders : number;
@@ -57,13 +52,11 @@ export class SliderComponent implements OnInit {
     this.goNext(next);
     $(this.panels[this.currentSlider]).addClass('current-slide');
     $(buttons[this.currentSlider]).addClass('active');
-    
-    //console.log(this.currentSlider);
   }
 
   goNext(next? : number){
-    if(next){
-      console.log('Click');
+    if(typeof next != 'undefined'){
+      //console.log('Click');
       //console.log('Next: '+ next.toString());
       this.currentSlider = next; 
       clearInterval(this.timer);
