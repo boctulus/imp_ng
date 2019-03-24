@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { P404Component } from './static/p404/p404.component';
 import { LayoutComponent } from './static/layout/layout.component';
 import { HomeComponent } from './static/home/home.component';
 import { SomosComponent } from './static/somos/somos.component';
@@ -81,7 +81,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PageNotFoundComponent,
+        component: P404Component,
       }
     ]
   }

@@ -10,7 +10,7 @@ import { NavbarComponent } from './static/navbar/navbar.component';
 import { FooterComponent } from './static/footer/footer.component';
 import { HomeComponent } from './static/home/home.component';
 import { SomosComponent } from './static/somos/somos.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { P404Component } from './static/p404/p404.component';
 import { ServiciosComponent } from './static/servicios/servicios.component';
 import { TutorialesComponent } from './static/tutoriales/tutoriales.component';
 import { ConsultasComponent } from './static/consultas/consultas.component';
@@ -21,6 +21,9 @@ import { PubliciteComponent } from './static/publicite/publicite.component';
 import { DenunciasComponent } from './static/denuncias/denuncias.component';
 import { LegalesComponent } from './static/legales/legales.component';
 import { BajaComponent } from './static/baja/baja.component';
+// import { CarouselComponent } from './shared/carousel/carousel.component';
+// import { CarouselItemDirective } from './shared/carousel/carousel-item.directive';
+import { SliderComponent } from './static/home/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,7 @@ import { BajaComponent } from './static/baja/baja.component';
     LayoutComponent,
     NavbarComponent,
     FooterComponent,
-    PageNotFoundComponent,
+    P404Component,
     HomeComponent,
     SomosComponent,
     ServiciosComponent,
@@ -40,7 +43,10 @@ import { BajaComponent } from './static/baja/baja.component';
     RegistroComponent,
     LoginComponent,
     LegalesComponent,
-    BajaComponent
+    BajaComponent,
+    // CarouselComponent,
+    // CarouselItemDirective,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
