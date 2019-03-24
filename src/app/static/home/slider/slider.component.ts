@@ -7,9 +7,16 @@ import * as $ from 'jquery';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
+  slides : Array<any> = [
+    {'title':'TITULO 1','text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iusto placeat aliquid tempore harum, similique!','img_url':'http://i9.photobucket.com/albums/a88/creaticode/1_zpsc6871490.jpg'},
+    {'title':'TITULO 2','text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iusto placeat aliquid tempore harum, similique!','img_url':'http://i9.photobucket.com/albums/a88/creaticode/2_zps6ccd36bd.jpg'},
+    {'title':'TITULO 3','text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dicta laudantium voluptatem minima! Dolorum tempore dolores excepturi omnis provident. Commodi quis aperiam maiores, dolore a perferendis!','img_url':'http://i9.photobucket.com/albums/a88/creaticode/4_zps611bc9f9.jpg'},
+    {'title':'TITULO 4','text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.','img_url':'http://i9.photobucket.com/albums/a88/creaticode/3_zps70e4fcc5.jpg'}
+  ];
+
   interval = 2500;
   timer : any;
-  currentSlider = 0
+  currentSlider = 0;
   cantSliders : number;
   panels : any;
   slider : any;
@@ -22,7 +29,7 @@ export class SliderComponent implements OnInit {
     this.slider =  $('#slider');
     this.panels = this.slider.find('.slider-wrapper > li');
     this.controls = $('.control-buttons');
-    this.cantSliders = this.panels.length;
+    this.cantSliders = this.slides.length;
     this.active = true;
 
     this.timer = setInterval(()=>{this.interact();}, this.interval);
@@ -41,17 +48,12 @@ export class SliderComponent implements OnInit {
     });
   }
 
+  // se simplifica enormemente!
   interact(next? : number){
     if (!this.active)
       return;
 
-    let buttons = this.controls.children();  
-
-    $(this.panels[this.currentSlider]).removeClass('current-slide');
-    $(buttons[this.currentSlider]).removeClass('active');
     this.goNext(next);
-    $(this.panels[this.currentSlider]).addClass('current-slide');
-    $(buttons[this.currentSlider]).addClass('active');
   }
 
   goNext(next? : number){
@@ -62,7 +64,7 @@ export class SliderComponent implements OnInit {
       clearInterval(this.timer);
       this.timer = setInterval(()=>{this.interact();}, this.interval);
     }else
-    this.currentSlider++;
+      this.currentSlider++;
 
     if (this.currentSlider>= this.cantSliders){
       this.currentSlider = 0;
