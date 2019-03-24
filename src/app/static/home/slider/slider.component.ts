@@ -56,12 +56,11 @@ export class SliderComponent implements OnInit {
 
   goNext(next? : number){
     if(typeof next != 'undefined'){
-      //console.log('Click');
-      //console.log('Next: '+ next.toString());
       this.currentSlider = next; 
+
+      // reseteo el timer
       clearInterval(this.timer);
       this.timer = setInterval(()=>{this.interact();}, this.interval);
-
     }else
     this.currentSlider++;
 
