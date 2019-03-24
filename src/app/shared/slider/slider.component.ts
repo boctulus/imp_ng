@@ -9,15 +9,16 @@ import { SliderService } from './slider.service';
 })
 export class SliderComponent implements OnInit {
   slides : Array<any>;
-  interval = 2500;
+  interval : number;
   timer : any;
   currentSlider = 0;
-  active: boolean;
+  active : boolean;
 
   constructor(private _sliderService : SliderService) { }
 
   ngOnInit() {
     this.slides = this._sliderService.getSlides();
+    this.interval = this._sliderService.getInterval();
     this.active = true;
     this.timer = setInterval(()=>{this.goNext();}, this.interval);
 

@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(private _sliderService : SliderService) { }
 
   ngOnInit() {
-    this._sliderService.setSlides(this.slides);
+    this._sliderService.setSlides(this.slides, 2500);
   }
 
 }

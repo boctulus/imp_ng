@@ -5,11 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class SliderService {
   slides : Array<any>;
+  interval: number;
 
   constructor() { }
 
-  setSlides(_slides:Array<any>){
+  setSlides(_slides:Array<any>, time? : number){
     this.slides = _slides;
+    
+    if(typeof time != 'undefined')
+      this.setInterval(time);
   }
 
   getSlides(){
@@ -22,6 +26,14 @@ export class SliderService {
 
   clear(){
     this.slides = [];
+  }
+
+  setInterval(time){
+    this.interval = time;
+  }
+
+  getInterval(){
+    return this.interval;
   }
 
 }
