@@ -21,9 +21,7 @@ import { PubliciteComponent } from './static/publicite/publicite.component';
 import { DenunciasComponent } from './static/denuncias/denuncias.component';
 import { LegalesComponent } from './static/legales/legales.component';
 import { BajaComponent } from './static/baja/baja.component';
-// import { CarouselComponent } from './shared/carousel/carousel.component';
-// import { CarouselItemDirective } from './shared/carousel/carousel-item.directive';
-import { SliderComponent } from './static/home/slider/slider.component';
+import { SliderComponent } from './shared/slider/slider.component';
 
 @NgModule({
   declarations: [

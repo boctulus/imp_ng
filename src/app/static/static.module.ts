@@ -16,7 +16,8 @@ import { PubliciteComponent } from './publicite/publicite.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { FooterComponent } from './footer/footer.component';
 import { P404Component } from './p404/p404.component';
-import { SliderComponent } from './home/slider/slider.component';
+import { SliderComponent } from '../shared/slider/slider.component';
+
 
 @NgModule({
   declarations: [
