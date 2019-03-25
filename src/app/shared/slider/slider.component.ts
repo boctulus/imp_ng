@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
 import { SliderService } from './slider.service';
 
@@ -7,14 +7,15 @@ import { SliderService } from './slider.service';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements AfterViewInit {
   slides : Array<any>;
   interval : number;
   timer : any;
   currentSlider = 0;
   active : boolean;
 
-  constructor(private _sliderService : SliderService) { }
+  constructor(private _sliderService : SliderService, 
+    private elementRef: ElementRef, private renderer: Renderer) { }
 
   ngOnInit() {
     this.slides = this._sliderService.getSlides();
@@ -53,5 +54,16 @@ export class SliderComponent implements OnInit {
       this.currentSlider = 0;
     }
   }  
+
+  ngAfterViewInit(){
+    /*
+    this.elementRef.nativeElement.querySelector('ul.control-buttons > li').addEventListener('click', (e)=>{
+      console.log('Click');
+      let index = parseInt(e.target.id.substr(3));
+      this.goNext(index);
+    });
+    */
+  }
+  
   
 }
