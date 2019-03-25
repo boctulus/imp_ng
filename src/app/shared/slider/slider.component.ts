@@ -14,27 +14,13 @@ export class SliderComponent implements AfterViewInit {
   currentSlider = 0;
   active : boolean;
 
-  constructor(private _sliderService : SliderService, 
-    private elementRef: ElementRef, private renderer: Renderer) { }
+  constructor(private _sliderService : SliderService) { }
 
   ngOnInit() {
     this.slides = this._sliderService.getSlides();
     this.interval = this._sliderService.getInterval();
     this.active = true;
     this.timer = setInterval(()=>{this.goNext();}, this.interval);
-
-    $("body").on("mouseenter", "div.caption", ()=>{
-      this.active = false;
-    });
-
-    $("body").on("mouseleave", "div.caption", ()=>{
-      this.active = true;
-    });
-
-    $("body").on("click", "ul.control-buttons > li:not(.active)", (e)=>{
-      var index = parseInt(e.target.id.substr(3));
-      this.goNext(index);
-    });
   }
 
   goNext(next? : number){
@@ -56,13 +42,23 @@ export class SliderComponent implements AfterViewInit {
   }  
 
   ngAfterViewInit(){
-    /*
-    this.elementRef.nativeElement.querySelector('ul.control-buttons > li').addEventListener('click', (e)=>{
-      console.log('Click');
-      let index = parseInt(e.target.id.substr(3));
+
+    let $li = document.querySelector('ul.control-buttons').querySelectorAll('li');
+
+    $li.forEach( li => li.addEventListener('click', e => {
+      let target : any = event.target || event.srcElement || event.currentTarget;
+      let index = parseInt(target.id.substr(3));
       this.goNext(index);
-    });
-    */
+    }));
+
+    document.querySelectorAll('div.caption').forEach( caption => caption.addEventListener('mouseenter', e => {
+      this.active = false;
+    })); 
+
+    document.querySelectorAll('div.caption').forEach( caption => caption.addEventListener('mouseleave', e => {
+      this.active = true;
+    })); 
+
   }
   
   
