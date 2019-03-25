@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef, Renderer, AfterViewInit } from '@angular/core';
-import * as $ from 'jquery';
 import { SliderService } from './slider.service';
 
 @Component({
@@ -51,11 +50,11 @@ export class SliderComponent implements AfterViewInit {
       this.goNext(index);
     }));
 
-    document.querySelectorAll('div.caption').forEach( caption => caption.addEventListener('mouseenter', e => {
+    document.querySelectorAll('div.caption').forEach(caption => caption.addEventListener('mouseenter', e => {
       this.active = false;
     })); 
 
-    document.querySelectorAll('div.caption').forEach( caption => caption.addEventListener('mouseleave', e => {
+    document.querySelectorAll('div.caption').forEach(caption => caption.addEventListener('mouseleave', e => {
       this.active = true;
     })); 
 
