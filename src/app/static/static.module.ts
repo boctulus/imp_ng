@@ -38,6 +38,7 @@ import { SliderComponent } from '../shared/slider/slider.component';
     FooterComponent,
     P404Component,
     SliderComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule

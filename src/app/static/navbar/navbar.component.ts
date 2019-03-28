@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  visible : boolean;
+
   constructor() { }
 
   ngOnInit() {
-    console.log('NavbarComponent');
+    this.visible = false;
   }
 
+  toogle() {
+    this.visible = !this.visible;
+  }
 }

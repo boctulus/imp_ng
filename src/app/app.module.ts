@@ -1,7 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import bootstrap from "bootstrap";
 
@@ -45,6 +45,7 @@ import { SliderComponent } from './shared/slider/slider.component';
     BajaComponent,
     SliderComponent
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

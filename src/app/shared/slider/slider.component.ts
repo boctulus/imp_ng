@@ -34,6 +34,8 @@ export class SliderComponent implements AfterViewInit {
     this.interval = this._sliderService.getInterval();
     this.active = true;
     this.timer = setInterval(()=>{this.goNext();}, this.interval);
+
+    // parche para la primera diapositiva
     setTimeout(()=>{
       this.currentState = this.currentState == 'Out' ? 'In' : 'Out';
     },500);
@@ -43,16 +45,14 @@ export class SliderComponent implements AfterViewInit {
     if (!this.active)
       return;
 
-    this.currentState = this.currentState == 'Out' ? 'In' : 'Out';
+    this.currentState = this.currentState == 'Out' ? 'In' : 'Out';  
 
     if(typeof next != 'undefined'){
       this.currentSlider = next; 
 
       // reseteo el timer
       clearInterval(this.timer);
-      this.timer = setInterval(()=>{
-        this.goNext();
-      }, this.interval);
+      this.timer = setInterval(()=>{this.goNext();}, this.interval);
     }else
       this.currentSlider++;
 

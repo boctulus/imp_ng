@@ -1,83 +1,40 @@
-<!-- 
-INICIO
-QUIENES SOMOS
-SERVICIOS
-TUTORIALES
-CONSULTAS
-AYUDA
-REGISTRATE
-INICIAR SESION
--->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" routerLink= "/home">INICIO</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/somos">QUIENES SOMOS</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/servicios">SERVICIOS</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/tutoriales">TUTORIALES</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/consultas">CONSULTAS</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/ayuda">AYUDA</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/registro">REGÍSTRATE</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink= "/login">INICIAR SESION</a>
-    </li>
-  </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="../assets/img/isologo.png">
+    IMPRIMOYA
+  </a>
+
+  <button class="navbar-toggler" type="button" (click)="toogle()"> 
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{'show':visible}" >
+       
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink= "/home">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/somos">QUIENES SOMOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/servicios">SERVICIOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/tutoriales">TUTORIALES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/consultas">CONSULTAS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/ayuda">AYUDA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/registro">REGÍSTRATE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink= "/login">INICIAR SESION</a>
+        </li>
+      </ul>
+  </div>
 </nav>
 
-<!--
-  <header id="header">
-    <nav id="nav-top">
-        <div class="container">
-          <ul class="contact-top">
-              <li><a href="#"><i class="fa fa-phone"></i> +66 123456789</a></li>
-              <li><a href="#"><i class="fa fa-envelope"></i> info@example.com </a></li>
-          </ul>
-          <ul class="social-top pull-right">
-              <li><a href="https://www.facebook.com/Imprimoya?ref=hl" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://twitter.com/imprimoya" target="_blank"><i class="fa fa-twitter"></i></a></li>
-          </ul>
-        </div>
-    </nav>
-    <nav id="nav-middle">
-        <nav class="navbar" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <ul class="navbar-xs pull-right  visible-xs">
-                        <li><button class="btn btn-header-search" ><i class="fa fa-search"></i></button></li>
-                        <li><a href="#" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></a></li>
-                    </ul>
-                    <a class="navbar-brand" href="#">
-                      <img src="assets/img/isologo.png" width="90px">
-                    </a> 
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                  <ul class="nav navbar-nav navbar-right hidden-xs" id="navigation">
-                      <li class="active"><a routerLink="/home">INICIO</a></li>
-                      <li><a routerLink="/somos">QUIENES SOMOS</a></li>
-                      <li><a routerLink="/servicios">SERVICIOS</a></li>
-                      <li><a routerLink="/home#tutoriales">TUTORIALES</a></li>
-                      <li><a routerLink="/consultas">CONSULTAS</a></li>
-                      <li><a routerLink="/ayuda">AYUDA</a></li>
-                      <li><a routerLink="/registro">REGISTRATE</a></li>
-                      <li><a routerLink="/login">INICIAR SESION</a></li>
-                      <li><button class="btn btn-circle btn-header-search" ><i class="fa fa-search"></i></button></li>
-                  </ul>
-                </div>
-            </div>
-        </nav>
-    </nav>
-</header>
--->
