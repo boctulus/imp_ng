@@ -4,7 +4,7 @@
   <div class="slider">
       <ul class="slider-wrapper" >
         
-        <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fadeIn]=currentState [@fadeOut]=currentState>
+        <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fade]=currentState >
           <img src="{{slide.img_url}}" alt="">
     
           <div class="caption">

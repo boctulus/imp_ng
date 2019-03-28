@@ -7,24 +7,16 @@ import { trigger, style, transition, animate, group, state } from '@angular/anim
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
   animations: [
-    trigger('fadeIn', [
+    trigger('fade', [
       state('In', style({
         opacity: 1
       })),
       state('Out', style({
         opacity: 0
       })),
-      transition('*=>In', animate('1500ms 1500ms ease-in'))
-    ]),
-    trigger('fadeOut', [
-      state('In', style({
-        opacity: 1
-      })),
-      state('Out', style({
-        opacity: 0
-      })),
-      transition('*=>Out', animate('1500ms 1500ms ease-out'))
-    ])
+      transition('Out=>In', animate('3000ms 1000ms ease-in')),
+      transition('In=>Out', animate('2500ms 1500ms ease-out'))
+    ])  
   ] 
 })
 export class SliderComponent implements AfterViewInit {
