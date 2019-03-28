@@ -14,8 +14,8 @@ import { trigger, style, transition, animate, group, state } from '@angular/anim
       state('Out', style({
         opacity: 0
       })),
-      transition('Out=>In', animate('3000ms 1000ms ease-in')),
-      transition('In=>Out', animate('2500ms 1500ms ease-out'))
+      transition('Out=>In', animate('3500ms 500ms ease-out')),
+      transition('In=>Out', animate('3500ms 500ms ease-out'))
     ])  
   ] 
 })
@@ -25,7 +25,7 @@ export class SliderComponent implements AfterViewInit {
   timer : any;
   currentSlider = 0;
   active : boolean;
-  currentState = 'In';
+  currentState = 'Out';
 
   constructor(private _sliderService : SliderService) { }
 
@@ -34,6 +34,9 @@ export class SliderComponent implements AfterViewInit {
     this.interval = this._sliderService.getInterval();
     this.active = true;
     this.timer = setInterval(()=>{this.goNext();}, this.interval);
+    setTimeout(()=>{
+      this.currentState = this.currentState == 'Out' ? 'In' : 'Out';
+    },500);
   }
 
   goNext(next? : number){
