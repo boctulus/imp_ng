@@ -1,10 +1,10 @@
   <!-- ==================================== 
   Contenedor Slider 
   =======================================-->
-  <section id="slider" class="container">
+  <div class="slider">
       <ul class="slider-wrapper" >
         
-        <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}">
+        <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fadeIn]=currentState [@fadeOut]=currentState>
           <img src="{{slide.img_url}}" alt="">
     
           <div class="caption">
@@ -20,5 +20,5 @@
       <ul class="control-buttons">
         <li *ngFor="let slide of slides; index as i" id="btn{{i}}" [ngClass]="{'active': i == currentSlider}"></li>
       </ul>
-    </section>
+  </div>
     

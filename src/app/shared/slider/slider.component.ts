@@ -1,10 +1,31 @@
 import { Component, OnInit, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import { SliderService } from './slider.service';
+import { trigger, style, transition, animate, group, state } from '@angular/animations';
 
 @Component({
   selector: 'slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css']
+  styleUrls: ['./slider.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      state('In', style({
+        opacity: 1
+      })),
+      state('Out', style({
+        opacity: 0
+      })),
+      transition('*=>In', animate('1500ms 1500ms ease-in'))
+    ]),
+    trigger('fadeOut', [
+      state('In', style({
+        opacity: 1
+      })),
+      state('Out', style({
+        opacity: 0
+      })),
+      transition('*=>Out', animate('1500ms 1500ms ease-out'))
+    ])
+  ] 
 })
 export class SliderComponent implements AfterViewInit {
   slides : Array<any>;
@@ -12,6 +33,7 @@ export class SliderComponent implements AfterViewInit {
   timer : any;
   currentSlider = 0;
   active : boolean;
+  currentState = 'In';
 
   constructor(private _sliderService : SliderService) { }
 
@@ -26,12 +48,16 @@ export class SliderComponent implements AfterViewInit {
     if (!this.active)
       return;
 
+    this.currentState = this.currentState == 'Out' ? 'In' : 'Out';
+
     if(typeof next != 'undefined'){
       this.currentSlider = next; 
 
       // reseteo el timer
       clearInterval(this.timer);
-      this.timer = setInterval(()=>{this.goNext();}, this.interval);
+      this.timer = setInterval(()=>{
+        this.goNext();
+      }, this.interval);
     }else
       this.currentSlider++;
 

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -42,12 +43,11 @@ import { SliderComponent } from './shared/slider/slider.component';
     LoginComponent,
     LegalesComponent,
     BajaComponent,
-    // CarouselComponent,
-    // CarouselItemDirective,
     SliderComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [],
