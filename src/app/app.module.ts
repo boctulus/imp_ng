@@ -42,10 +42,9 @@ import { SliderComponent } from './shared/slider/slider.component';
     LoginComponent,
     LegalesComponent,
     BajaComponent,
-    // CarouselComponent,
-    // CarouselItemDirective,
     SliderComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule

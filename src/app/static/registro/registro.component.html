@@ -1,27 +1,84 @@
 <section class="section bg-purple" style="background: #48C7BC !important">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-6  col-md-offset-3 topindex">
-          <h2 class="text-center"><strong>REGISTRATE YA!</strong></h2>
-          <h3 class="sub-title text-center" style="color: #FFF !important">Completa los siguientes datos.</h3><br>
-              <form name="registro" id="registro" action="panel/abm/usernew.php" method="post">
-                <div class="input-group">
-                    <input  type="text" name="name" id="name" placeholder="Nombre" maxlength="40" class="form-control" />
-                    <input  type="text" name="lastname" id="lastname" placeholder="Apellido" maxlength="40" class="form-control" />
-                    <input  type="text" name="mail" id="mail" placeholder="Email" maxlength="50" class="form-control" />
-                    <input  type="text" name="mail2" id="mail2" placeholder="Repetir email" maxlength="50" class="form-control" />
-                    <input  type="password" name="password" id="password" placeholder="Contraseña" maxlength="20" class="form-control" />
-                    <input  type="password" name="password2" id="password2" placeholder="Repetir contraseña" maxlength="20" class="form-control" />
-                    <select class="form-control" name="typeuser" id="typeuser">
-                      <option value=""  selected="selected">Selecciona usuario / centro grafico</option>
-                      <option value="1">Usuario, soy una persona que necesita imprimir</option>
-                      <option value="3">Centro gráfico, soy una empresa que imprime</option>
-                    </select>
-                    <button class="form-control btn-primary" type="button" onclick="valiform()">REGISTRARME</button>
-                    <div>Al registrarme, declaro que soy mayor de edad y acepto los Términos y Condiciones y las Políticas de Privacidad de IMPRIMOYA!.</div>
-                </div>	
-              </form>	
+        <div class="container">
+            
+                <div>
+                <h2 class="text-center"><strong>REGISTRATE YA!</strong></h2>
+                <h3 class="sub-title text-center" style="color: #FFF !important">Completa los siguientes datos.</h3><br>
+              </div>
+            
           </div>
-      </div>
+ <div class="container">
+
+    <div class="signup-form-container">
+    
+         <!-- form start -->
+         <form role="form" id="register-form" autocomplete="off">
+         
+         <div class="form-header">
+          <h3 class="form-title"><i class="fa fa-user"></i> REGISTRARME</h3>
+                      
+         <div class="pull-right">
+             <h3 class="form-title"><span class="glyphicon glyphicon-pencil"></span></h3>
+         </div>
+                      
+         </div>
+         
+         <div class="form-body">
+                      
+            <div class="form-group">
+                   <div class="input-group">
+                   <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                   <input name="name" type="text" class="form-control" placeholder="Nombre">
+                   </div>
+                   <span class="help-block" id="error"></span>
+              </div>
+                        
+              <div class="form-group">
+                   <div class="input-group">
+                   <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                   <input name="email" type="text" class="form-control" placeholder="Email">
+                   </div> 
+                   <span class="help-block" id="error"></span>                     
+              </div>
+            <div class="form-group">
+                        <select class="form-control" name="typeuser" id="typeuser">
+                            <option value=""  selected="selected">Selecciona usuario / centro grafico</option>
+                            <option value="1">Usuario, soy una persona que necesita imprimir</option>
+                            <option value="3">Centro gráfico, soy una empresa que imprime</option>
+                          </select>
+            </div>              
+              <div class="row">
+                        
+                   <div class="form-group col-lg-6">
+                        <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
+                        </div>  
+                        <span class="help-block" id="error"></span>                    
+                   </div>
+                            
+                   <div class="form-group col-lg-6">
+                        <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                        <input name="cpassword" type="password" class="form-control" placeholder="confirme Password">
+                        </div>  
+                        <span class="help-block" id="error"></span>                    
+                   </div>
+                            
+             </div>
+                        
+                        
+            </div>
+            
+            <div class="form-footer">
+                 <button type="submit" class="btn btn-info">
+                 <span class="glyphicon glyphicon-log-in"></span> REGISTRARME
+                 </button>
+                 
+            </div>
+
+              <br>
+            </form>          
+     </div>
   </div>
 </section>

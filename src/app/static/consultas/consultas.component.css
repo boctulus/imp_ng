@@ -1,1 +1,40 @@
-@import url('../../../assets/css/style.css'); 
+/*@import url('../../../assets/css/style.css'); */
+h1{
+	color: #495260;
+}
+h2{
+	color:#4b4b4f;
+}
+h3{
+	color:#495260;
+	text-align: center;
+	opacity:.9;
+}
+h4{
+	color:#4b4b4f;
+}
+h5{
+	color:#4b4b4f;
+}
+h6{
+	color:#4b4b4f;
+}
+header{
+	color:#4b4b4f;
+}
+.collapse-caret{
+	color:#4b4b4f;
+}
+.panel-body{
+	color:#006a7c;
+}
+.panel-collapse .collapse{
+	color:#44824f;
+}
+a{
+	color:#44824f;
+}
+.containercollap{
+	background-color:#ddd;
+	border: solid 2px #fff;
+}
