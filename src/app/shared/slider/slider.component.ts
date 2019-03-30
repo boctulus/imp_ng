@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import { SliderService } from './slider.service';
-import { trigger, style, transition, animate, state, sequence } from '@angular/animations';
+import { trigger, style, transition, animate, group, state, sequence } from '@angular/animations';
 
 @Component({
   selector: 'slider',
