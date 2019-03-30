@@ -98,7 +98,7 @@ export class SliderComponent implements AfterViewInit {
 
     document.querySelectorAll('div.caption').forEach(caption => caption.addEventListener('mouseenter', e => {
       this.active = false;
-      this.state=='s2';
+      this.state='s1';
       clearTimeout(this.t0);
       clearTimeout(this.t1);
       clearTimeout(this.t2);
@@ -106,6 +106,13 @@ export class SliderComponent implements AfterViewInit {
 
     document.querySelectorAll('div.caption').forEach(caption => caption.addEventListener('mouseleave', e => {
       this.active = true;
+      this.state='s2';
+      clearTimeout(this.t0);
+      clearTimeout(this.t1);
+      clearTimeout(this.t2);
+      this.t2 = setTimeout(()=>{
+        this.state = 's3';
+      },1000);
     }));
 
   }
