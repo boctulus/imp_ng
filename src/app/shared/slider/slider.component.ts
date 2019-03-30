@@ -16,18 +16,23 @@ import { trigger, style, transition, animate, group, state } from '@angular/anim
         opacity: 1
       })),
       state('s2', style({
+        opacity: 1
+      })),
+      state('s3', style({
         opacity: 0
       })),
-      transition('void => *', animate('1500ms 0ms ease-out')),
-      transition('s0 => s1', animate('1500ms 0ms ease-out')),
-      transition('s1 => s2', animate('1500ms 0ms ease-out'))
+      transition('s0 => s1', animate('1000ms 0ms ease-out')),
+      transition('s2 => s3', animate('1000ms 0ms ease-out'))
     ])
   ]
 })
 export class SliderComponent implements AfterViewInit {
   slides : Array<any>;
   interval : number;
-  timer : any;
+  timer;
+  t0;
+  t1;
+  t2;
   currentSlider = 0;
   active : boolean;
   state = 's1';
@@ -35,10 +40,15 @@ export class SliderComponent implements AfterViewInit {
   constructor(private _sliderService : SliderService) { }
 
   ngOnInit() {
+    //console.log(this.state);
     this.slides = this._sliderService.getSlides();
     this.interval = this._sliderService.getInterval();
     this.active = true;
     this.timer = setInterval(()=>{this.goNext();}, this.interval);
+    this.t1 = setTimeout(()=>{
+      this.state = 's2';
+      //console.log(this.state);
+    },2500);
   }
 
   goNext(next? : number){
@@ -46,14 +56,21 @@ export class SliderComponent implements AfterViewInit {
       return;
 
     this.state = 's0';
+    clearTimeout(this.t0);
+    clearTimeout(this.t1);
+    clearTimeout(this.t2);
 
-    setTimeout(()=>{
-      if (this.state=='s0') this.state = 's1'; else if (this.state=='s1' && this.active) this.state = 's2';
-    },2000);
+    this.t0 = setTimeout(()=>{
+      if (this.state=='s0') this.state = 's1';
+    },1000);
 
-    setTimeout(()=>{
-      if (this.state=='s0') this.state = 's1'; else if (this.state=='s1' && this.active) this.state = 's2';
-    },3000);
+    this.t1 = setTimeout(()=>{
+      if (this.state=='s1') this.state = 's2';
+    },1000+1500);
+
+    this.t2 = setTimeout(()=>{
+      if (this.state=='s2') this.state = 's3';
+    },1000+1500+1000);
 
     if(typeof next != 'undefined'){
       this.currentSlider = next;
