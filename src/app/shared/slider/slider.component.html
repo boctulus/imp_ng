@@ -1,24 +1,23 @@
-<!-- ==================================== 
-Contenedor Slider 
+<!-- ====================================
+Contenedor Slider
 =======================================-->
 <section id="slider" class="container">
     <ul class="slider-wrapper" >
-      
-      <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fade]=state >
+
+      <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fade]=currentSlider >
         <img src="{{slide.img_url}}" alt="">
-  
+
         <div class="caption">
           <h2 class="slider-title">{{slide.title}}</h2>
           <p>{{slide.text}}</p>
         </div>
       </li>
-  
+
     </ul>
-    
-    
+
+
     <!-- Controles de Navegacion -->
     <ul class="control-buttons">
       <li *ngFor="let slide of slides; index as i" id="btn{{i}}" [ngClass]="{'active': i == currentSlider}"></li>
     </ul>
   </section>
-    
