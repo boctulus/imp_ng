@@ -4,7 +4,7 @@ Contenedor Slider
 <section id="slider" class="container">
     <ul class="slider-wrapper" >
       
-      <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fade]=currentState >
+      <li *ngFor="let slide of slides; index as i" [ngClass]="{'current-slide': i == currentSlider}" [@fade]=state >
         <img src="{{slide.img_url}}" alt="">
   
         <div class="caption">

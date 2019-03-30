@@ -6,18 +6,23 @@ import { trigger, style, transition, animate, group, state } from '@angular/anim
   selector: 'slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
+  // animate ('duration delay easing')
   animations: [
     trigger('fade', [
-      state('In', style({
-        opacity: 1
-      })),
-      state('Out', style({
+      state('s0', style({
         opacity: 0
       })),
-      transition('Out=>In', animate('3500ms 500ms ease-out')),
-      transition('In=>Out', animate('3500ms 500ms ease-out'))
-    ])  
-  ] 
+      state('s1', style({
+        opacity: 1
+      })),
+      state('s2', style({
+        opacity: 0
+      })),
+      transition('void => *', animate('1500ms 0ms ease-out')),
+      transition('s0 => s1', animate('1500ms 0ms ease-out')),
+      transition('s1 => s2', animate('1500ms 0ms ease-out'))
+    ])
+  ]
 })
 export class SliderComponent implements AfterViewInit {
   slides : Array<any>;
@@ -25,7 +30,7 @@ export class SliderComponent implements AfterViewInit {
   timer : any;
   currentSlider = 0;
   active : boolean;
-  currentState = 'Out';
+  state = 's1';
 
   constructor(private _sliderService : SliderService) { }
 
@@ -34,21 +39,24 @@ export class SliderComponent implements AfterViewInit {
     this.interval = this._sliderService.getInterval();
     this.active = true;
     this.timer = setInterval(()=>{this.goNext();}, this.interval);
-
-    // parche para la primera diapositiva
-    setTimeout(()=>{
-      this.currentState = this.currentState == 'Out' ? 'In' : 'Out';
-    },500);
   }
 
   goNext(next? : number){
     if (!this.active)
       return;
 
-    this.currentState = this.currentState == 'Out' ? 'In' : 'Out';  
+    this.state = 's0';
+
+    setTimeout(()=>{
+      if (this.state=='s0') this.state = 's1'; else if (this.state=='s1' && this.active) this.state = 's2';
+    },2000);
+
+    setTimeout(()=>{
+      if (this.state=='s0') this.state = 's1'; else if (this.state=='s1' && this.active) this.state = 's2';
+    },3000);
 
     if(typeof next != 'undefined'){
-      this.currentSlider = next; 
+      this.currentSlider = next;
 
       // reseteo el timer
       clearInterval(this.timer);
@@ -59,7 +67,7 @@ export class SliderComponent implements AfterViewInit {
     if (this.currentSlider>= this.slides.length){
       this.currentSlider = 0;
     }
-  }  
+  }
 
   ngAfterViewInit(){
 
@@ -73,13 +81,13 @@ export class SliderComponent implements AfterViewInit {
 
     document.querySelectorAll('div.caption').forEach(caption => caption.addEventListener('mouseenter', e => {
       this.active = false;
-    })); 
+    }));
 
     document.querySelectorAll('div.caption').forEach(caption => caption.addEventListener('mouseleave', e => {
       this.active = true;
-    })); 
+    }));
 
   }
-  
-  
+
+
 }
