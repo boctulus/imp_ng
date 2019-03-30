@@ -53,7 +53,7 @@ export class SliderComponent implements AfterViewInit {
 
     setTimeout(()=>{
       if (this.state=='s0') this.state = 's1'; else if (this.state=='s1' && this.active) this.state = 's2';
-    },3000); //
+    },3000);
 
     if(typeof next != 'undefined'){
       this.currentSlider = next;
